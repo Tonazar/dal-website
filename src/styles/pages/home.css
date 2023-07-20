@@ -19,7 +19,6 @@
   justify-content: space-between;
 }
 .title-wrap .display h1 {
-  color: var(--dark70);
   position: relative;
   display: inline-block;
   z-index: 1;
@@ -42,6 +41,7 @@
 .wrapper .container .brief {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  /* display: flex; */
 }
 .wrapper .container .brief .imgwrap {
   flex: 1;
@@ -51,8 +51,20 @@
   aspect-ratio: 1/1.5;
 }
 .wrapper .container .brief .imgwrap img {
-  object-fit: cover;
+  background-size: cover;
   width: 100%;
+  transform: scale(1.2);
+}
+.wrapper .container .brief:hover .imgwrap img {
+  animation: img-anim 20s ease-in-out;
+}
+@keyframes img-anim {
+  0% {
+    transform: scale(1.2) translateX(0px);
+  }
+  100% {
+    transform: scale(1.4) translateX(-50px);
+  }
 }
 .wrapper .container .brief .contents {
   align-self: end;
@@ -147,13 +159,13 @@
 .video-section .values-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
 .video-section .values-wrap .values {
   display: flex;
   align-items: center;
   gap: 1rem;
   border-bottom: 1px solid var(--border);
+  padding: 2rem 0;
 }
 
 .video-section .values .body p {

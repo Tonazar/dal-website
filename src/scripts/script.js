@@ -87,6 +87,7 @@ itemsArray.forEach((item) => {
   });
   item.addEventListener("mouseleave", (e) => {
     parentBanner.style.gridTemplateColumns = `1fr 1fr 2fr 1fr 1fr`;
+    bannerClass.style.opacity = 1;
   });
 });
 

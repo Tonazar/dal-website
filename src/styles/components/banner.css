@@ -9,22 +9,73 @@
 }
 .wrapper .banner .item {
   display: flex;
-  align-items: end;
+  justify-content: end;
   overflow: hidden;
   border-right: 1px solid var(--white);
+  flex-direction: column;
 }
 .wrapper .banner .item:last-child {
   border: none;
 }
-.wrapper .banner .item .display h1 {
-  color: var(--white);
-  opacity: 0;
+.wrapper .banner .item .contents {
   transition: 500ms;
   padding-left: 2rem;
   padding-bottom: 2rem;
+  opacity: 0;
+}
+.wrapper .banner .item1:hover .contents {
+  opacity: 1;
+}
+.wrapper .banner .item2:hover .contents {
+  opacity: 1;
+}
+.wrapper .banner .item3 .contents {
+  opacity: 1;
+}
+.wrapper .banner .item3:hover .contents {
+  opacity: 1;
+}
+.wrapper .banner .item4:hover .contents {
+  opacity: 1;
+}
+.wrapper .banner .item5:hover .contents {
+  opacity: 1;
+}
+/* ============ */
+.wrapper .banner:has(.item1:hover) .item3 .contents {
+  opacity: 0;
+}
+.wrapper .banner:has(.item1:hover) .item3 {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+.wrapper .banner:has(.item2:hover) .item3 .contents {
+  opacity: 0;
+}
+.wrapper .banner:has(.item2:hover) .item3 {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+.wrapper .banner:has(.item4:hover) .item3 .contents {
+  opacity: 0;
+}
+.wrapper .banner:has(.item4:hover) .item3 {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+.wrapper .banner:has(.item5:hover) .item3 .contents {
+  opacity: 0;
+}
+.wrapper .banner:has(.item5:hover) .item3 {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+/* ======== */
+
+.wrapper .banner .item .display h1 {
+  color: var(--white);
   width: 10ch;
 }
-
 .wrapper .banner .item1 {
   background: url("../../images/banner1.jpg") no-repeat center;
   background-size: cover;
@@ -35,9 +86,20 @@
 .wrapper .banner .item1:hover {
   filter: grayscale(0);
   opacity: 1;
+  animation: banner-bg-anim 30s ease-in-out;
 }
-.wrapper .banner .item1:hover .display h1 {
-  opacity: 1;
+.wrapper .banner .item1 img {
+  max-width: 45px;
+}
+.wrapper .banner .item a {
+  width: 7rem;
+  height: 7rem;
+  background-color: var(--highlight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100rem;
+  margin-bottom: 1rem;
 }
 .wrapper .banner .item2 {
   background: url("../../images/banner2.jpg") no-repeat center;
@@ -49,17 +111,19 @@
 .wrapper .banner .item2:hover {
   filter: grayscale(0);
   opacity: 1;
+  animation: banner-bg-anim 30s ease-in-out;
 }
 .wrapper .banner .item3 {
   background: url("../../images/banner3.jpg") no-repeat center;
   background-size: cover;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   transition: 500ms;
-  opacity: 0.5;
+  opacity: 1;
 }
 .wrapper .banner .item3:hover {
   filter: grayscale(0);
   opacity: 1;
+  animation: banner-bg-anim 30s ease-in-out;
 }
 .wrapper .banner .item4 {
   background: url("../../images/banner4.jpg") no-repeat center;
@@ -71,6 +135,7 @@
 .wrapper .banner .item4:hover {
   filter: grayscale(0);
   opacity: 1;
+  animation: banner-bg-anim 30s ease-in-out;
 }
 .wrapper .banner .item5 {
   background: url("../../images/banner5.jpg") no-repeat center;
@@ -82,6 +147,7 @@
 .wrapper .banner .item5:hover {
   filter: grayscale(0);
   opacity: 1;
+  animation: banner-bg-anim 30s ease-in-out;
 }
 
 /* .wrapper .banner:has(.item1:hover) {
@@ -124,3 +190,12 @@
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
   }
 } */
+
+@keyframes banner-bg-anim {
+  from {
+    background-position: 1 0;
+  }
+  to {
+    background-position: 0.1% 0;
+  }
+}
