@@ -1,0 +1,12 @@
+@import "./default/modern-normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Source+Sans+3:wght@200;400&display=swap");
+/* @font-face {
+  font-family: "SixCaps";
+  src: url(../../fonts/SixCaps-Regular.ttf);
+} */
+
+@import "./utils/variables.css";
+@import "./default/base.css";
+@import "./components/footer.css";
+
+@import "./pages/home.css";
