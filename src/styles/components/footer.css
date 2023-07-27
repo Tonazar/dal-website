@@ -9,46 +9,81 @@
   color: var(--white);
   padding: 3rem 0;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 1fr 0.5fr;
-  gap: 1rem;
+  row-gap: 1rem;
+  column-gap: 3rem;
 }
-.footer-wrap .footer-content .fcaption {
+.footer-wrap .footer-content .fcaption h2 {
   max-width: 70ch;
 }
-.footer-wrap .footer-content .menu1 {
+.footer-wrap .footer-content .menu {
   grid-area: 1/2/3/3;
+  display: flex;
+
+  /* justify-content: space-between; */
 }
-.footer-wrap .footer-content .menu2 {
-  grid-area: 1/3/3/4;
+.footer-wrap .footer-content .menu ul {
+  flex: 1;
 }
-.footer-wrap .footer-content .menu1 li,
-.footer-wrap .footer-content .menu2 li {
+.footer-wrap .footer-content .menu li {
   padding: 0.1rem 0;
 }
-.footer-wrap .footer-content .menu1 li a,
-.footer-wrap .footer-content .menu2 li a {
+.footer-wrap .footer-content .menu li a {
   color: var(--light);
 }
-.footer-wrap .footer-content .menu1 li a:hover,
-.footer-wrap .footer-content .menu2 li a:hover {
+.footer-wrap .footer-content .menu li a:hover {
   color: var(--white);
 }
 .footer-wrap .footer-content .social {
   align-self: end;
   display: flex;
   gap: 3rem;
+  grid-area: 3/1/4/2;
 }
 .footer-wrap .footer-content .copyright {
   align-self: end;
-  grid-area: 3/2/4/4;
+  grid-area: 3/2/4/3;
 }
 
-@container footer-container (max-width: 1200px) {
+@container footer-container (max-width: 1440px) {
   .footer-wrap .footer-content {
     width: 90%;
   }
   .footer-wrap .footer-content .fcaption {
     max-width: 80%;
+  }
+}
+@container footer-container (max-width: 1024px) {
+  .footer-wrap .footer-content .menu {
+    flex-direction: column;
+  }
+  .footer-wrap .footer-content .fcaption h2 {
+    font-size: 2rem;
+  }
+}
+@container footer-container (max-width: 768px) {
+  .footer-wrap .footer-content {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5fr 0.5fr;
+  }
+  .footer-wrap .footer-content .copyright {
+    grid-area: 4/1/5/3;
+  }
+}
+@container footer-container (max-width: 650px) {
+  .footer-wrap .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer-wrap .footer-content .fcaption h2 {
+    font-size: 1.2rem;
+  }
+  .footer-wrap .footer-content .social {
+    align-self: flex-start;
+  }
+  .footer-wrap .footer-content .copyright {
+    align-self: flex-start;
   }
 }

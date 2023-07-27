@@ -1,0 +1,95 @@
+header {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 3rem;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  container: header-container/inline-size;
+}
+header .main-menu {
+  display: flex;
+  align-items: center;
+}
+header ul {
+  display: flex;
+  gap: 2rem;
+}
+header ul li {
+}
+header nav ul li a {
+  padding: 0.5rem 0;
+  color: var(--light);
+}
+header ul li:hover a {
+  color: var(--white);
+  border-bottom: 2px solid var(--highlight);
+}
+header .menu-icon {
+  display: none;
+  position: absolute;
+  z-index: 99;
+  right: 3rem;
+}
+header .nav-bg-drop {
+  display: none;
+}
+@layer hidden-layer {
+  header .nav-bg-drop {
+    visibility: hidden;
+    height: 0;
+    transition: all 500ms ease-in-out;
+  }
+  header .nav-bg-drop .drop-menu ul li {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 500ms ease-in-out;
+  }
+}
+@layer show-layer {
+  .show-menu-drop {
+    visibility: visible;
+    height: 100vh;
+  }
+  .show-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@container header-container (max-width: 1024px) {
+  header .main-menu {
+    display: none;
+  }
+  header .menu-icon {
+    display: block;
+  }
+  header .nav-bg-drop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    z-index: 10;
+    overflow: hidden;
+    display: block;
+  }
+  header .nav-bg-drop .drop-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+}

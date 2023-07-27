@@ -87,7 +87,7 @@ itemsArray.forEach((item) => {
   });
   item.addEventListener("mouseleave", (e) => {
     parentBanner.style.gridTemplateColumns = `1fr 1fr 2fr 1fr 1fr`;
-    bannerClass.style.opacity = 1;
+    // bannerClass.style.opacity = 1;
   });
 });
 
@@ -102,3 +102,36 @@ function cloneItems() {
 }
 
 cloneItems();
+
+// Intersection Observer
+const imgWrap = document.querySelector(".wrapper .container .brief .imgwrap");
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries[0].target.classList.toggle("show", entries[0].isIntersecting);
+    if (entries[0].isIntersecting) observer.unobserve(entries[0].target);
+    // 1 time loading
+  },
+  {
+    threshold: 0.5,
+    // rootMargin: "-200px", //substracting from top and bottom
+  }
+);
+observer.observe(imgWrap);
+
+// Header
+const menuIcon = document.querySelector("header .menu-icon");
+const navBgDrop = document.querySelector("header .nav-bg-drop");
+const dropMenuList = document.querySelectorAll(
+  "header .nav-bg-drop .drop-menu ul li"
+);
+
+menuIcon.addEventListener("click", (e) => {
+  navBgDrop.classList.toggle("show-menu-drop");
+});
+for (let i = 0; i < dropMenuList.length; i++) {
+  menuIcon.addEventListener("click", () => {
+    setTimeout(() => {
+      dropMenuList[i].classList.toggle("show-menu");
+    }, 100 * i);
+  });
+}

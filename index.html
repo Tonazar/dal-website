@@ -7,19 +7,61 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- Header -->
     <header>
       <a href="#"><img src="./src/images/logo_w.png" alt="" /></a>
-      <nav>
+      <nav class="main-menu">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Our Businesses</a></li>
-          <li><a href="#">Career</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="business.html">Our Businesses</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
+      <svg class="menu-icon" viewBox="0 0 100 30" width="30px" height="20px">
+        <path
+          class="icon"
+          d="m0 0 l100 0"
+          stroke-width="10"
+          fill="none"
+          stroke="white"
+        />
+        <path
+          class="icon"
+          d="m0 20 l100 0"
+          stroke-width="10"
+          fill="none"
+          stroke="white"
+        />
+      </svg>
+      <!-- Nav drop -->
+      <aside class="nav-bg-drop">
+        <nav class="drop-menu">
+          <ul>
+            <li>
+              <a href="index.html"><h2>Home</h2></a>
+            </li>
+            <li>
+              <a href="about.html"><h2>About Us</h2></a>
+            </li>
+            <li>
+              <a href="business.html"><h2>Our Businesses</h2></a>
+            </li>
+            <li>
+              <a href="career.html"><h2>Career</h2></a>
+            </li>
+            <li>
+              <a href="contact.html"><h2>Contact Us</h2></a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- Nav drop end -->
     </header>
+    <!-- Header end -->
     <main class="wrapper">
+      <!-- Banner -->
       <section class="banner">
         <div class="item item1">
           <div class="contents">
@@ -62,6 +104,8 @@
           </div>
         </div>
       </section>
+      <section class="sm-banner"></section>
+      <!-- Banner end -->
       <section class="container">
         <div class="title-wrap">
           <div class="display">
@@ -231,12 +275,13 @@
           </div>
         </div>
       </section>
-      <div class="footer-wrap">
+      <!-- Footer -->
+      <footer class="footer-wrap">
         <div class="footer-content">
           <div class="item flogo">
             <img src="./src/images/logo-w.png" alt="" />
           </div>
-          <div class="item menu1">
+          <div class="item menu">
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">About Us</a></li>
@@ -244,8 +289,6 @@
               <li><a href="#">Careers</a></li>
               <li><a href="#">Contact Us</a></li>
             </ul>
-          </div>
-          <div class="item menu2">
             <ul>
               <li><a href="#">Terms & Conditions</a></li>
               <li><a href="#">Privacy Policy</a></li>
@@ -267,7 +310,6 @@
             <a href="#"><img src="./src/images/twitter.png" alt="" /></a>
             <a href="#"><img src="./src/images/youtube.png" alt="" /></a>
           </div>
-
           <div class="item copyright">
             <div class="body">
               <p>contact@dalgroup.com</p>
@@ -275,7 +317,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </footer>
     </main>
     <script src="./src/scripts/script.js"></script>
   </body>
