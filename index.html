@@ -7,6 +7,10 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- Loading screen -->
+    <div class="loading-bg">
+      <div class="progress-bar"></div>
+    </div>
     <!-- Header -->
     <header>
       <a href="#"><img src="./src/images/logo_w.png" alt="" /></a>
@@ -118,8 +122,14 @@
       </section>
       <section class="container">
         <div class="brief">
-          <div class="imgwrap">
-            <img src="./src/images/brief.jpg" alt="" />
+          <div class="imgwrap blur-load">
+            <picture>
+              <source
+                media="(max-width:1024px)"
+                srcset="./src/images/brief-sm.jpg"
+              />
+              <img src="./src/images/brief.jpg" alt="" loading="lazy" />
+            </picture>
           </div>
           <div class="contents">
             <h1>

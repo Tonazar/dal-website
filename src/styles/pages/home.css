@@ -1,4 +1,22 @@
-@import "../components/banner.css";
+.loading-bg {
+  position: absolute;
+  z-index: 9999;
+  background-color: var(--dark90);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: top 1s ease-in-out;
+}
+.loading-bg .progress-bar {
+  width: 1%;
+  height: 10px;
+  background-color: var(--lighter);
+  transition: width 2s ease-in-out;
+}
+.loading-bg .progress-bar.active {
+  width: 100%;
+}
 
 .wrapper {
   width: 100vw;
@@ -53,8 +71,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   transition: all 500ms ease-in-out;
+}
+.wrapper .container .brief .blur-load {
+  background: url(../../images/brief-ll.jpg) center;
+  background-size: cover;
+}
+.wrapper .container .brief .blur-load.loaded img {
+  opacity: 1;
+}
+.wrapper .container .brief .blur-load img {
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
 }
 @layer layer1 {
   .wrapper .container .brief .imgwrap {
@@ -69,7 +97,8 @@
   }
 }
 .wrapper .container .brief .imgwrap img {
-  background-size: cover;
+  object-fit: cover;
+  object-position: center;
   width: 100%;
   transform: scale(1.2);
 }
@@ -300,3 +329,8 @@
     border-right: none;
   }
 }
+
+/* div{
+    position: absolute;
+    inset: 0; all sides touches the edges
+} */

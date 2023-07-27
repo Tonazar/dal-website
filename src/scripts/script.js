@@ -1,3 +1,17 @@
+// Page load
+const loadingBg = document.querySelector(".loading-bg");
+const progressBar = document.querySelector(".progress-bar");
+window.addEventListener("DOMContentLoaded", (e) => {
+  setTimeout(() => {
+    setTimeout(() => {
+      progressBar.classList.add("active");
+    });
+    setTimeout(() => {
+      loadingBg.style.top = "-100vh";
+    }, 2000);
+  });
+});
+
 // const items = document.querySelectorAll(".item");
 
 // items.forEach((item) => {
@@ -135,3 +149,18 @@ for (let i = 0; i < dropMenuList.length; i++) {
     }, 100 * i);
   });
 }
+
+// Lazy loding
+const blurDiv = document.querySelectorAll(".blur-load");
+blurDiv.forEach((div) => {
+  const img = div.querySelector("img");
+
+  function loaded() {
+    div.classList.add("loaded");
+  }
+  if (img.complete) {
+    loaded();
+  } else {
+    img.addEventListener("load", loaded);
+  }
+});
