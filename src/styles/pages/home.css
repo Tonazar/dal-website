@@ -1,3 +1,5 @@
+@import "../components/banner.css";
+
 .loading-bg {
   position: absolute;
   z-index: 9999;
@@ -9,7 +11,7 @@
   transition: top 1s ease-in-out;
 }
 .loading-bg .progress-bar {
-  width: 1%;
+  width: 0%;
   height: 10px;
   background-color: var(--lighter);
   transition: width 2s ease-in-out;
@@ -179,6 +181,7 @@
   width: fit-content;
   white-space: nowrap;
   gap: 2rem;
+  padding-top: 1rem;
 }
 
 @keyframes scroll {
@@ -192,8 +195,10 @@
 .scroll-content .item {
   background-color: var(--lighter);
   min-width: 220px;
-  padding: 2rem;
   border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-section {
