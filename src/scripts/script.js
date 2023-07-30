@@ -1,16 +1,36 @@
 init();
 function init() {
   // Page load
+  const main = document.querySelector("main");
   const loadingBg = document.querySelector(".loading-bg");
-  const progressBar = document.querySelector(".progress-bar");
+  const progressBar = document.querySelectorAll(".progress-bar");
+  const counter = document.querySelector(".counter");
+  let count = 0;
   window.addEventListener("DOMContentLoaded", (e) => {
+    main.style.display = "none";
     setTimeout(() => {
+      function updateCounter(count) {
+        counter.innerHTML = count;
+      }
+
+      function startCounting() {
+        for (let i = 0; i < 100; i++) {
+          setTimeout(() => {
+            updateCounter(i);
+          }, i * 30);
+        }
+      }
+
+      startCounting();
+      for (let i = 0; i < progressBar.length; i++) {
+        setTimeout(() => {
+          progressBar[i].classList.add("active");
+        }, 500 * i);
+      }
       setTimeout(() => {
-        progressBar.classList.add("active");
-      });
-      setTimeout(() => {
+        main.style.display = "block";
         loadingBg.style.top = "-100vh";
-      }, 2000);
+      }, 3000);
     });
   });
 

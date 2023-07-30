@@ -8,16 +8,34 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 0;
   transition: top 1s ease-in-out;
 }
 .loading-bg .progress-bar {
   width: 0%;
-  height: 10px;
-  background-color: var(--lighter);
+  height: 1px;
+  background-color: var(--dark50);
   transition: width 2s ease-in-out;
 }
 .loading-bg .progress-bar.active {
   width: 100%;
+}
+.loading-bg .counter {
+  position: absolute;
+  left: 2rem;
+  animation: counting 3s ease-in-out forwards;
+}
+@keyframes counting {
+  from {
+    bottom: 10%;
+  }
+  to {
+    color: var(--dark90);
+    bottom: 80%;
+  }
 }
 
 .wrapper {
@@ -199,6 +217,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.scroll-content:hover {
+  animation-play-state: paused;
+}
+.scroll-content .item:hover {
+  cursor: pointer;
 }
 
 .video-section {
