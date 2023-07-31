@@ -94,3 +94,8 @@ header .nav-bg-drop {
     height: 100vh;
   }
 }
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+}

@@ -209,6 +209,7 @@
 @container main-container (max-width: 1024px) {
   .wrapper .banner {
     display: none;
+    height: 100svh;
   }
   .wrapper .sm-banner {
     display: block;
