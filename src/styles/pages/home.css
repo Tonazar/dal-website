@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding: 3rem 0;
   transition: top 1s ease-in-out;
 }
@@ -27,6 +28,11 @@
   position: absolute;
   left: 2rem;
   animation: counting 3s ease-in-out forwards;
+}
+.loading-bg img {
+  position: absolute;
+  left: calc(50% - 34px);
+  top: calc(50% - 34px);
 }
 @keyframes counting {
   from {
