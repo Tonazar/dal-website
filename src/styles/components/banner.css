@@ -4,7 +4,7 @@
 }
 .wrapper .banner {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -206,7 +206,7 @@
     background-position: 0.1% 0;
   }
 }
-@container main-container (max-width: 1024px) {
+@container main-container (max-width: 480px) {
   .wrapper .banner {
     display: none;
     height: 100svh;
