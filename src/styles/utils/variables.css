@@ -11,6 +11,7 @@
   --white: #ffffff;
 
   --radius: 1rem;
+  --shadow: 5px 12px 12px rgba(0, 0, 0, 0.16);
 
   /* Display XXL */
   --dl-size-max: 8rem;

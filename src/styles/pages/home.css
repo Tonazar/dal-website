@@ -27,7 +27,7 @@
 .loading-bg .counter {
   position: absolute;
   left: 2rem;
-  animation: counting 3s ease-in-out forwards;
+  animation: counting 3s ease-in forwards;
 }
 .loading-bg img {
   position: absolute;
@@ -39,7 +39,7 @@
     bottom: 10%;
   }
   to {
-    color: var(--dark90);
+    color: #ffffff04;
     bottom: 80%;
   }
 }
@@ -64,9 +64,6 @@
   justify-content: space-between;
 }
 .title-wrap .display h1 {
-  position: relative;
-  display: inline-block;
-  z-index: 1;
   max-width: 18ch;
 }
 .title-wrap .globe-graphics {
@@ -94,9 +91,6 @@
   max-height: 730px;
   border-radius: var(--radius);
   aspect-ratio: 1/1.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: all 500ms ease-in-out;
 }
 .wrapper .container .brief .blur-load {
@@ -222,6 +216,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+  position: relative;
 }
 .scroll-content:hover {
   animation-play-state: paused;

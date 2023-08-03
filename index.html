@@ -18,7 +18,9 @@
     </div>
     <!-- Header -->
     <header>
-      <a href="#"><img src="./src/images/logo_w.png" alt="dal group" /></a>
+      <div class="logo">
+        <a href="#"><img src="./src/images/logo_w.png" alt="dal group" /></a>
+      </div>
       <nav class="main-menu">
         <ul>
           <li><a class="active" href="index.html">Home</a></li>
@@ -28,7 +30,7 @@
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
-      <svg class="menu-icon" viewBox="0 0 100 30" width="30px" height="20px">
+      <!-- <svg class="menu-icon" viewBox="0 0 100 30" width="30px" height="30px">
         <path
           class="icon"
           d="m0 0 l100 0"
@@ -38,12 +40,39 @@
         />
         <path
           class="icon"
-          d="m0 20 l100 0"
+          d="m0 24 l100 0"
           stroke-width="10"
           fill="none"
           stroke="white"
         />
-      </svg>
+      </svg> -->
+
+      <button class="menu-icon" aria-expanded="false">
+        <svg
+          class="hamburger"
+          viewBox="0 0 100 100"
+          width="40"
+          fill="var(--lighter)"
+        >
+          <rect
+            class="line top"
+            width="80"
+            height="6"
+            x="10"
+            y="37"
+            rx="3"
+          ></rect>
+          <rect
+            class="line bottom"
+            width="80"
+            height="6"
+            x="10"
+            y="63"
+            rx="3"
+          ></rect>
+        </svg>
+      </button>
+
       <!-- Nav drop -->
       <aside class="nav-bg-drop">
         <nav class="drop-menu">

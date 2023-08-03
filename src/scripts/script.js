@@ -106,6 +106,12 @@ function init() {
 
   menuIcon.addEventListener("click", (e) => {
     navBgDrop.classList.toggle("show-menu-drop");
+    const iconIsOpen = menuIcon.getAttribute("aria-expanded");
+    if (iconIsOpen === "false") {
+      menuIcon.setAttribute("aria-expanded", "true");
+    } else {
+      menuIcon.setAttribute("aria-expanded", "false");
+    }
   });
   for (let i = 0; i < dropMenuList.length; i++) {
     menuIcon.addEventListener("click", () => {
